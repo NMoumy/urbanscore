@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
+import QuartierCard from "./QuartierCard";
+import RankingFilters from "./RankingFilters";
 
 type Quartier = {
   id: string;
@@ -8,62 +10,50 @@ type Quartier = {
   score: number;
   security: number;
   transport: number;
-  leisure: number;
+  service: number;
   cost: number;
+  leisure: number;
 };
 
 const data: Quartier[] = [
-  { id: "1", name: "Rosemont", score: 80, security: 88, transport: 85, leisure: 80, cost: 70 },
-  { id: "2", name: "Plateau-Mont-Royal", score: 80, security: 88, transport: 85, leisure: 80, cost: 70 },
-  { id: "3", name: "Outremont", score: 75, security: 85, transport: 80, leisure: 78, cost: 65 },
-  { id: "4", name: "Villeray", score: 70, security: 80, transport: 75, leisure: 72, cost: 60 },
+  { id: "1", name: "Rosemont", score: 82, security: 96, transport: 81, service: 78, cost: 82, leisure: 83 },
+  { id: "2", name: "Plateau-Mont-Royal", score: 82, security: 78, transport: 81, service: 85, cost: 50, leisure: 75 },
+  { id: "3", name: "Villeray", score: 82, security: 88, transport: 84, service: 82, cost: 75, leisure: 80 },
+  { id: "4", name: "Outremont", score: 75, security: 85, transport: 80, service: 78, cost: 65, leisure: 70 },
 ];
 
 export default function RankingList() {
-  const [sortedData] = useState(data);
+  const [sortBy, setSortBy] = useState<"score" | "name">("score");
+  const [filterCategory, setFilterCategory] = useState<string>("all");
+
+  const sortedData = useMemo(() => {
+    const filtered = filterCategory === "all" ? data : data.filter((q) => q.name === filterCategory);
+    const sorted = [...filtered].sort((a, b) => {
+      if (sortBy === "score") return b.score - a.score;
+      if (sortBy === "name") return a.name.localeCompare(b.name);
+      return 0;
+    });
+    return sorted;
+  }, [sortBy, filterCategory]);
+
+  const categories = useMemo(() => data.map((q) => q.name), []);
 
   return (
-    <div style={{ padding: "20px", maxWidth: "900px", margin: "0 auto" }}>
-      <h1>Classement des quartiers de Montréal</h1>
+    <div className="w-full pb-8">
+      <RankingFilters
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        filterCategory={filterCategory}
+        setFilterCategory={setFilterCategory}
+        categories={categories}
+      />
 
-      <div style={{ marginBottom: "20px" }}>
-        <button style={{ marginRight: "10px", padding: "8px 16px", cursor: "pointer" }}>Tous</button>
-        <button style={{ marginRight: "10px", padding: "8px 16px", cursor: "pointer" }}>Famille</button>
-        <button style={{ marginRight: "10px", padding: "8px 16px", cursor: "pointer" }}>Calme</button>
-        <button style={{ marginRight: "10px", padding: "8px 16px", cursor: "pointer" }}>Étudiants</button>
-        <button style={{ padding: "8px 16px", cursor: "pointer" }}>Budget</button>
-      </div>
-
-      {sortedData.map((quartier, index) => (
-        <div
-          key={quartier.id}
-          style={{
-            display: "flex",
-            gap: "20px",
-            padding: "15px",
-            marginBottom: "10px",
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            alignItems: "center",
-          }}
-        >
-          <div style={{ fontSize: "32px", fontWeight: "bold", minWidth: "40px" }}>{index + 1}</div>
-
-          <div style={{ flex: 1 }}>
-            <h3 style={{ margin: "0 0 10px 0" }}>{quartier.name}</h3>
-            <div style={{ display: "flex", gap: "20px", fontSize: "14px" }}>
-              <span>Sécurité {quartier.security}</span>
-              <span>Transport {quartier.transport}</span>
-              <span>Loisir {quartier.leisure}</span>
-              <span>Coût {quartier.cost}</span>
-            </div>
-          </div>
-
-          <div style={{ fontSize: "24px", fontWeight: "bold", minWidth: "80px", textAlign: "right" }}>
-            Score {quartier.score}
-          </div>
-        </div>
-      ))}
+      {/* Liste */}
+      {/* <div className="space-y-4">
+        {sortedData.map((quartier, index) => (
+          <QuartierCard key={quartier.id} quartier={quartier} index={index} />
+        ))}
+      </div> */}
     </div>
   );
 }

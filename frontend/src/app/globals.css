@@ -1,14 +1,30 @@
 @import "tailwindcss";
+@import "../styles/filters.css";
 
 :root {
   --background: #f6f6fa;
   --foreground: #414141;
   --accent: #0070f3;
+  --white: #ffffff;
+  --black: #111111;
+
+  /* Gris personnalisés */
+  --gray-light: #e5e7eb;
+  --gray-less-light: #9ca3af;
+  --gray-medium: #6b7280;
 }
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-gray-light: var(--gray-light);
+  --color-gray-medium: var(--gray-medium);
+
+  /* Fonts */
   --font-sans: var(--font-poppins);
 }
 
@@ -34,10 +50,29 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: var(--accent)
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--black);
+}
+
+h1 {
+  @apply text-2xl;
 }
 
 /* Composants */
 .btn {
   @apply bg-white shadow-2xs;
+}
+
+/* Conteneur principal avec largeur max pour 18 pouces (2304px) */
+.container-main {
+  @apply max-w-[2304px] mx-auto w-full;
 }

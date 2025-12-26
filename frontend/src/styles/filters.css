@@ -1,0 +1,53 @@
+.filter-select {
+  @apply px-4 py-2 text-sm outline-none cursor-pointer bg-white;
+}
+
+/* Style du menu déroulant (dropdown) */
+.filter-select option {
+  padding: 8px 12px;
+  background-color: var(--white);
+  color: var(--foreground);
+  border: none;
+  border-color: var(--gray-light);
+}
+
+.filter-select option:hover {
+  background-color: var(--white);
+  color: var(--accent);
+}
+
+.filter-container {
+  @apply flex border border-gray-light rounded bg-white;
+}
+
+.divider-vertical {
+  @apply w-px bg-gray-light;
+}
+
+.filter-dropdown-button {
+  @apply px-4 py-2 text-sm bg-white border border-gray-light rounded-md hover:border-gray-400 flex items-center gap-2 cursor-pointer;
+}
+
+.filter-dropdown-menu {
+  @apply absolute top-full left-0 mt-1 w-48 bg-white border border-gray-light rounded-md shadow-lg z-50 overflow-hidden;
+}
+
+.filter-dropdown-option {
+  @apply block w-full text-left px-4 py-2 text-sm cursor-pointer;
+}
+.filter-dropdown-option:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/*.filter-dropdown-option-selected {
+  @apply bg-blue-500 text-white;
+}*/
+
+.sort-label {
+  @apply px-4 py-2 text-sm text-gray-700 select-none;
+}
+
+.sort-button {
+  @apply w-full px-4 py-2 text-sm text-left hover:bg-gray-50 flex items-center justify-between gap-2 cursor-pointer;
+}
