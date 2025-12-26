@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f6fa;
+  --foreground: #414141;
+  --accent: #0070f3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+}
+
+/* Pour theme sombre temporaiment desactivé */
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --accent: #3291ff;
+  }
+}*/
+
+/* Éléments */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  @apply font-sans;
+}
+
+a {
+  text-decoration: none;
+  transition: text-decoration 200ms ease-out;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--accent)
+}
+
+/* Composants */
+.btn {
+  @apply bg-white shadow-2xs;
+}
