@@ -4,7 +4,8 @@
 :root {
   --background: #f6f6fa;
   --foreground: #414141;
-  --accent: #0070f3;
+  --accent: #54a4ff;
+  --accent-darker: rgb(30, 111, 203);
   --white: #ffffff;
   --black: #111111;
 
@@ -12,6 +13,7 @@
   --gray-light: #e5e7eb;
   --gray-less-light: #9ca3af;
   --gray-medium: #6b7280;
+  --gray-dark: #181818;
 }
 
 @theme inline {
@@ -19,10 +21,12 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-darker: var(--accent-darker);
   --color-white: var(--white);
   --color-black: var(--black);
   --color-gray-light: var(--gray-light);
   --color-gray-medium: var(--gray-medium);
+  --color-gray-dark: var(--gray-dark);
 
   /* Fonts */
   --font-sans: var(--font-poppins);
@@ -71,8 +75,23 @@ h1 {
 .btn {
   @apply bg-white shadow-2xs;
 }
+.btn-primary-small {
+  @apply bg-accent border border-accent-darker text-white px-6 py-2 rounded-lg font-medium text-sm cursor-pointer;
+  transition: all 200ms ease-out;
+}
+.btn-primary-small:hover {
+  /* opacity: 0.70; */
+  background-color: var(--accent-darker);
+}
 
 /* Conteneur principal avec largeur max pour 18 pouces (2304px) */
 .container-main {
-  @apply max-w-[2304px] mx-auto w-full;
+  /* @apply max-w-[2304px] mx-auto w-full; */
+  @apply max-w-576 mx-auto w-full;
+}
+
+.line-horizontal {
+  height: 1px;
+  background-color: var(--gray-light);
+  @apply my-4;
 }

@@ -21,11 +21,11 @@
 }
 
 .divider-vertical {
-  @apply w-px bg-gray-light;
+  @apply w-px bg-gray-light self-stretch;
 }
 
 .filter-dropdown-button {
-  @apply px-4 py-2 text-sm bg-white border border-gray-light rounded-md hover:border-gray-400 flex items-center gap-2 cursor-pointer;
+  @apply px-4 py-2 text-sm bg-white border border-gray-light hover:bg-gray-50 rounded-md flex items-center gap-2 cursor-pointer;
 }
 
 .filter-dropdown-menu {
@@ -49,5 +49,5 @@
 }
 
 .sort-button {
-  @apply w-full px-4 py-2 text-sm text-left hover:bg-gray-50 flex items-center justify-between gap-2 cursor-pointer;
+  @apply w-full px-4 py-2 text-sm text-left hover:bg-gray-50 rounded flex items-center justify-between gap-2 cursor-pointer;
 }

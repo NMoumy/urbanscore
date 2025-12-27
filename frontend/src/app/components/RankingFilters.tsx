@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { CaretDownIcon } from "@phosphor-icons/react";
 
 type RankingFiltersProps = {
-  sortBy: "score" | "name";
-  setSortBy: (value: "score" | "name") => void;
+  sortBy: "best" | "worst";
+  setSortBy: (value: "best" | "worst") => void;
   filterCategory: string;
   setFilterCategory: (value: string) => void;
   categories: string[];
@@ -22,8 +22,8 @@ export default function RankingFilters({
   const [openSort, setOpenSort] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const currentCategory = filterCategory === "all" ? "Catégorie" : filterCategory;
-  const currentSort = sortBy === "score" ? "meilleur score" : "pire score";
+  const currentCategory = filterCategory === "all" ? "Tout" : filterCategory;
+  const currentSort = sortBy === "best" ? "meilleur score" : "pire score";
 
   // Ferme les menus sur clic extérieur
   useEffect(() => {
@@ -39,37 +39,53 @@ export default function RankingFilters({
 
   return (
     <div ref={containerRef} className="flex gap-3 mb-8">
-      {/* Catégorie Dropdown */}
-      <div className="relative w-fit">
-        <button
-          className="filter-dropdown-button"
-          onClick={() => {
-            setOpenCategory((v) => !v);
-            setOpenSort(false);
-          }}
-        >
-          {currentCategory}
-          <CaretDownIcon size={16} weight="fill" className="text-gray-400" />
-        </button>
+      {/* Profil Section */}
+      <div className="relative filter-container">
+        <div className="sort-label">Profil</div>
+        <div className="divider-vertical"></div>
 
-        {openCategory && (
-          <div className="filter-dropdown-menu">
-            {["all", ...categories].map((cat) => (
+        <div className="relative flex-1">
+          <button
+            className="sort-button"
+            onClick={() => {
+              setOpenCategory((v) => !v);
+              setOpenSort(false);
+            }}
+          >
+            <span>{currentCategory}</span>
+            <CaretDownIcon size={16} weight="fill" className="text-gray-400" />
+          </button>
+
+          {openCategory && (
+            <div className="filter-dropdown-menu w-full">
               <button
-                key={cat}
                 onClick={() => {
-                  setFilterCategory(cat);
+                  setFilterCategory("all");
                   setOpenCategory(false);
                 }}
                 className={`filter-dropdown-option ${
-                  filterCategory === cat ? "filter-dropdown-option-selected" : "text-gray-900"
+                  filterCategory === "all" ? "filter-dropdown-option-selected" : "text-gray-900"
                 }`}
               >
-                {cat === "all" ? "Catégorie" : cat}
+                Tout
               </button>
-            ))}
-          </div>
-        )}
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => {
+                    setFilterCategory(cat);
+                    setOpenCategory(false);
+                  }}
+                  className={`filter-dropdown-option ${
+                    filterCategory === cat ? "filter-dropdown-option-selected" : "text-gray-900"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Trier Par Section */}
@@ -91,18 +107,18 @@ export default function RankingFilters({
 
           {openSort && (
             <div className="filter-dropdown-menu w-full">
-              {["score", "name"].map((option) => (
+              {["best", "worst"].map((option) => (
                 <button
                   key={option}
                   onClick={() => {
-                    setSortBy(option as "score" | "name");
+                    setSortBy(option as "best" | "worst");
                     setOpenSort(false);
                   }}
                   className={`filter-dropdown-option ${
                     sortBy === option ? "filter-dropdown-option-selected" : "text-gray-900"
                   }`}
                 >
-                  {option === "score" ? "meilleur score" : "pire score"}
+                  {option === "best" ? "meilleur score" : "pire score"}
                 </button>
               ))}
             </div>

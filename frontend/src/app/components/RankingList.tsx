@@ -23,37 +23,37 @@ const data: Quartier[] = [
 ];
 
 export default function RankingList() {
-  const [sortBy, setSortBy] = useState<"score" | "name">("score");
-  const [filterCategory, setFilterCategory] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<"best" | "worst">("best");
+  const [filterProfile, setFilterProfile] = useState<string>("all");
 
   const sortedData = useMemo(() => {
-    const filtered = filterCategory === "all" ? data : data.filter((q) => q.name === filterCategory);
+    const filtered = filterProfile === "all" ? data : data.filter((q) => q.name === filterProfile);
     const sorted = [...filtered].sort((a, b) => {
-      if (sortBy === "score") return b.score - a.score;
-      if (sortBy === "name") return a.name.localeCompare(b.name);
+      if (sortBy === "best") return b.score - a.score;
+      if (sortBy === "worst") return a.score - b.score;
       return 0;
     });
     return sorted;
-  }, [sortBy, filterCategory]);
+  }, [sortBy, filterProfile]);
 
-  const categories = useMemo(() => data.map((q) => q.name), []);
+  const profiles = ["Famille", "Étudiants", "Personne âgée", "Petit budget"];
 
   return (
     <div className="w-full pb-8">
       <RankingFilters
         sortBy={sortBy}
         setSortBy={setSortBy}
-        filterCategory={filterCategory}
-        setFilterCategory={setFilterCategory}
-        categories={categories}
+        filterCategory={filterProfile}
+        setFilterCategory={setFilterProfile}
+        categories={profiles}
       />
 
       {/* Liste */}
-      {/* <div className="space-y-4">
+      <div className="space-y-4">
         {sortedData.map((quartier, index) => (
           <QuartierCard key={quartier.id} quartier={quartier} index={index} />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }
