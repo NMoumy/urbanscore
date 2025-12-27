@@ -1,6 +1,6 @@
 "use client";
 
-type QuartierScoresProps = {
+type NeighborhoodScoresProps = {
   score: number;
   security: number;
   transport: number;
@@ -9,7 +9,14 @@ type QuartierScoresProps = {
   leisure: number;
 };
 
-export default function QuartierScores({ score, security, transport, service, cost, leisure }: QuartierScoresProps) {
+export default function NeighborhoodScores({
+  score,
+  security,
+  transport,
+  service,
+  cost,
+  leisure,
+}: NeighborhoodScoresProps) {
   const scores = [
     { label: "Sécurité", value: security },
     { label: "Transport", value: transport },

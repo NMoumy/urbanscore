@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import QuartierCard from "./QuartierCard";
+import NeighborhoodCard from "./NeighborhoodCard";
 import RankingFilters from "./RankingFilters";
 
-type Quartier = {
+type Neighborhood = {
   id: string;
   name: string;
   score: number;
@@ -15,7 +15,7 @@ type Quartier = {
   leisure: number;
 };
 
-const data: Quartier[] = [
+const data: Neighborhood[] = [
   { id: "1", name: "Rosemont", score: 82, security: 96, transport: 81, service: 78, cost: 82, leisure: 83 },
   { id: "2", name: "Plateau-Mont-Royal", score: 82, security: 78, transport: 81, service: 85, cost: 50, leisure: 75 },
   { id: "3", name: "Villeray", score: 82, security: 88, transport: 84, service: 82, cost: 75, leisure: 80 },
@@ -27,7 +27,7 @@ export default function RankingList() {
   const [filterProfile, setFilterProfile] = useState<string>("all");
 
   const sortedData = useMemo(() => {
-    const filtered = filterProfile === "all" ? data : data.filter((q) => q.name === filterProfile);
+    const filtered = filterProfile === "all" ? data : data.filter((n) => n.name === filterProfile);
     const sorted = [...filtered].sort((a, b) => {
       if (sortBy === "best") return b.score - a.score;
       if (sortBy === "worst") return a.score - b.score;
@@ -50,8 +50,8 @@ export default function RankingList() {
 
       {/* Liste */}
       <div className="space-y-4">
-        {sortedData.map((quartier, index) => (
-          <QuartierCard key={quartier.id} quartier={quartier} index={index} />
+        {sortedData.map((neighborhood, index) => (
+          <NeighborhoodCard key={neighborhood.id} neighborhood={neighborhood} index={index} />
         ))}
       </div>
     </div>

@@ -1,16 +1,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CaretLeftIcon } from "@phosphor-icons/react/dist/ssr";
-import QuartierScores from "../../components/NeighborhoodScores";
-import QuartierStatistics from "../../components/NeighborhoodStatistics";
-import QuartierStrengths from "../../components/NeighborhoodStrengths";
+import NeighborhoodScores from "../../components/NeighborhoodScores";
+import NeighborhoodStatistics from "../../components/NeighborhoodStatistics";
+import NeighborhoodStrengths from "../../components/NeighborhoodStrengths";
 
 // Données temporaires - à remplacer par appel API
-const quartiersData = {
+const neighborhoodsData = {
   "1": {
     id: "1",
     name: "Rosemont",
-    description: "Découvrez les informations clés du quartier Rosemont",
+    description: "Découvrez les informations clés du quartier « Rosemont »",
     score: 82,
     security: 96,
     transport: 81,
@@ -28,7 +28,7 @@ const quartiersData = {
   "2": {
     id: "2",
     name: "Plateau-Mont-Royal",
-    description: "Découvrez les informations clés du quartier Plateau-Mont-Royal",
+    description: "Découvrez les informations clés du quartier « Plateau-Mont-Royal »",
     score: 82,
     security: 78,
     transport: 81,
@@ -46,7 +46,7 @@ const quartiersData = {
   "3": {
     id: "3",
     name: "Villeray",
-    description: "Découvrez les informations clés du quartier Villeray",
+    description: "Découvrez les informations clés du quartier « Villeray »",
     score: 82,
     security: 88,
     transport: 84,
@@ -64,7 +64,7 @@ const quartiersData = {
   "4": {
     id: "4",
     name: "Outremont",
-    description: "Découvrez les informations clés du quartier Outremont",
+    description: "Découvrez les informations clés du quartier « Outremont »",
     score: 75,
     security: 85,
     transport: 80,
@@ -85,16 +85,16 @@ type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-export default async function QuartierPage({ params }: PageProps) {
+export default async function NeighborhoodPage({ params }: PageProps) {
   const { id } = await params;
-  const quartier = quartiersData[id as keyof typeof quartiersData];
+  const neighborhood = neighborhoodsData[id as keyof typeof neighborhoodsData];
 
-  if (!quartier) {
+  if (!neighborhood) {
     notFound();
   }
 
   return (
-    <div className="px-4 md:px-6 bg-background">
+    <div className="px-4 md:px-6 bg-background min-h-screen">
       <div className="container-main py-6 md:py-10">
         {/* Bouton retour + Titre et Description alignés à gauche */}
         <div className="flex items-start gap-3 mb-8">
@@ -106,27 +106,27 @@ export default async function QuartierPage({ params }: PageProps) {
             <CaretLeftIcon size={24} weight="bold" className="text-foreground" />
           </Link>
           <div>
-            <h1 className="text-3xl md:text-4xl font-semibold text-black mb-2">{quartier.name}</h1>
-            <p className="text-foreground">{quartier.description}</p>
+            <h1 className="text-3xl md:text-4xl font-semibold text-black mb-2">{neighborhood.name}</h1>
+            <p className="text-foreground">{neighborhood.description}</p>
           </div>
         </div>
 
         {/* Composant de détails */}
         <div className="mb-8">
-          <QuartierScores
-            score={quartier.score}
-            security={quartier.security}
-            transport={quartier.transport}
-            service={quartier.service}
-            cost={quartier.cost}
-            leisure={quartier.leisure}
+          <NeighborhoodScores
+            score={neighborhood.score}
+            security={neighborhood.security}
+            transport={neighborhood.transport}
+            service={neighborhood.service}
+            cost={neighborhood.cost}
+            leisure={neighborhood.leisure}
           />
         </div>
 
         {/* Statistiques & Force & Faiblesse */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <QuartierStatistics statistics={quartier.statistics} />
-          <QuartierStrengths strengths={quartier.strengths} weaknesses={quartier.weaknesses} />
+          <NeighborhoodStatistics statistics={neighborhood.statistics} />
+          <NeighborhoodStrengths strengths={neighborhood.strengths} weaknesses={neighborhood.weaknesses} />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 import { CurrencyDollarIcon, UserIcon, TrainIcon } from "@phosphor-icons/react";
 
-type QuartierStatisticsProps = {
+type NeighborhoodStatisticsProps = {
   statistics: {
     medianIncome: string;
     population: string;
@@ -10,7 +10,7 @@ type QuartierStatisticsProps = {
   };
 };
 
-export default function QuartierStatistics({ statistics }: QuartierStatisticsProps) {
+export default function NeighborhoodStatistics({ statistics }: NeighborhoodStatisticsProps) {
   return (
     <div className="bg-white border border-gray-light rounded-lg p-6">
       <div className="flex items-center justify-between mb-6">

@@ -2,12 +2,12 @@
 
 import { CheckCircleIcon, XCircleIcon } from "@phosphor-icons/react";
 
-type QuartierStrengthsProps = {
+type NeighborhoodStrengthsProps = {
   strengths: string[];
   weaknesses: string[];
 };
 
-export default function QuartierStrengths({ strengths, weaknesses }: QuartierStrengthsProps) {
+export default function NeighborhoodStrengths({ strengths, weaknesses }: NeighborhoodStrengthsProps) {
   return (
     <div className="bg-white border border-gray-light rounded-lg p-6">
       <div className="flex items-center justify-between mb-6">

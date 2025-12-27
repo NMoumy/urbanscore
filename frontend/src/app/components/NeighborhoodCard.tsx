@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import StarRating from "./StarRating";
 
-type QuartierCardProps = {
-  quartier: {
+type NeighborhoodCardProps = {
+  neighborhood: {
     id: string;
     name: string;
     score: number;
@@ -18,13 +18,13 @@ type QuartierCardProps = {
   index: number;
 };
 
-export default function QuartierCard({ quartier, index }: QuartierCardProps) {
+export default function NeighborhoodCard({ neighborhood, index }: NeighborhoodCardProps) {
   const details = [
-    { label: "Sécurité", value: quartier.security },
-    { label: "Transport", value: quartier.transport },
-    { label: "Service", value: quartier.service },
-    { label: "Budget", value: quartier.cost },
-    { label: "Loisirs", value: quartier.leisure },
+    { label: "Sécurité", value: neighborhood.security },
+    { label: "Transport", value: neighborhood.transport },
+    { label: "Service", value: neighborhood.service },
+    { label: "Budget", value: neighborhood.cost },
+    { label: "Loisirs", value: neighborhood.leisure },
   ];
 
   return (
@@ -38,18 +38,18 @@ export default function QuartierCard({ quartier, index }: QuartierCardProps) {
         >
           {index + 1}
         </div>
-        <h3 className="text-lg md:text-xl font-semibold ">{quartier.name}</h3>
-        <StarRating score={quartier.score} />
-        <p className="w-full md:hidden order-1 ml-0">Score global {quartier.score}</p>
+        <h3 className="text-lg md:text-xl font-semibold ">{neighborhood.name}</h3>
+        <StarRating score={neighborhood.score} />
+        <p className="w-full md:hidden order-1 ml-0">Score global {neighborhood.score}</p>
         <Link
-          href={`/quartier/${quartier.id}`}
+          href={`/neighborhood/${neighborhood.id}`}
           className="w-full md:w-auto ml-0 md:ml-auto order-2 md:order-0 btn-primary-small text-center"
         >
           Voir le quartier
         </Link>
       </div>
 
-      <p className="mb-4 ml-0 md:ml-11 hidden md:block">Score global {quartier.score}</p>
+      <p className="mb-4 ml-0 md:ml-11 hidden md:block">Score global {neighborhood.score}</p>
 
       {/* Horizontal line */}
       <div className="line-horizontal"></div>
