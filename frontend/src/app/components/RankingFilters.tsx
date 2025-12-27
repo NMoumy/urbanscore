@@ -38,9 +38,9 @@ export default function RankingFilters({
   }, []);
 
   return (
-    <div ref={containerRef} className="flex gap-3 mb-8">
+    <div ref={containerRef} className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
       {/* Profil Section */}
-      <div className="relative filter-container">
+      <div className="relative filter-container sm:w-70">
         <div className="sort-label">Profil</div>
         <div className="divider-vertical"></div>
 
@@ -89,7 +89,7 @@ export default function RankingFilters({
       </div>
 
       {/* Trier Par Section */}
-      <div className="relative filter-container">
+      <div className="relative filter-container w-full sm:w-70">
         <div className="sort-label">Trier Par</div>
         <div className="divider-vertical"></div>
 

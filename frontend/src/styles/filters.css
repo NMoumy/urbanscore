@@ -29,7 +29,7 @@
 }
 
 .filter-dropdown-menu {
-  @apply absolute top-full left-0 mt-1 w-48 bg-white border border-gray-light rounded-md shadow-lg z-50 overflow-hidden;
+  @apply absolute top-full left-0 mt-1 w-full sm:w-56 bg-white border border-gray-light rounded-md shadow-lg z-50 overflow-hidden;
 }
 
 .filter-dropdown-option {
@@ -45,7 +45,7 @@
 }*/
 
 .sort-label {
-  @apply px-4 py-2 text-sm text-gray-700 select-none;
+  @apply w-25 text-sm text-gray-700 select-none flex items-center justify-start px-4;
 }
 
 .sort-button {
