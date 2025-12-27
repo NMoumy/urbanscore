@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import StarRating from "./StarRating";
 
 type QuartierCardProps = {
@@ -40,9 +41,12 @@ export default function QuartierCard({ quartier, index }: QuartierCardProps) {
         <h3 className="text-lg md:text-xl font-semibold ">{quartier.name}</h3>
         <StarRating score={quartier.score} />
         <p className="w-full md:hidden order-1 ml-0">Score global {quartier.score}</p>
-        <button className="w-full md:w-auto ml-0 md:ml-auto order-2 md:order-0 btn-primary-small">
+        <Link
+          href={`/quartier/${quartier.id}`}
+          className="w-full md:w-auto ml-0 md:ml-auto order-2 md:order-0 btn-primary-small text-center"
+        >
           Voir le quartier
-        </button>
+        </Link>
       </div>
 
       <p className="mb-4 ml-0 md:ml-11 hidden md:block">Score global {quartier.score}</p>

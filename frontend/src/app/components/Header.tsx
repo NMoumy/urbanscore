@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { MapPinIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { ListIcon as MenuIcon, XIcon as CloseIcon } from "@phosphor-icons/react";
 
@@ -12,18 +13,18 @@ export const Header = () => {
       <div className="container-main relative flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-0">
         {/* Barre supérieure: logo + nav desktop + bouton burger */}
         <div className="w-full flex items-center justify-between">
-          <div className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-1">
             <MapPinIcon size={28} weight="fill" className="text-accent" aria-hidden="true" />
             <p className="text-black text-lg md:text-xl font-semibold">
               Urban<span className="text-accent">Score</span>
             </p>
-          </div>
+          </Link>
 
           {/* Nav desktop */}
           <nav className="hidden md:flex gap-6 text-base">
-            <a href="#">Accueil</a>
-            <a href="#">Classement</a>
-            <a href="#">À propos</a>
+            <Link href="/">Accueil</Link>
+            <Link href="/#classement">À propos</Link>
+            <Link href="/#comparaison">Comparaison</Link>
           </nav>
 
           {/* Barre de recherche desktop */}
@@ -62,15 +63,15 @@ export const Header = () => {
               <div className="bg-white border border-gray-light rounded-lg p-3 shadow-xs mt-2">
                 {/* Liens de navigation */}
                 <nav className="flex flex-col gap-2">
-                  <a href="#" onClick={() => setMenuOpen(false)} className="py-1">
+                  <Link href="/" onClick={() => setMenuOpen(false)} className="py-1">
                     Accueil
-                  </a>
-                  <a href="#" onClick={() => setMenuOpen(false)} className="py-1">
-                    Classement
-                  </a>
-                  <a href="#" onClick={() => setMenuOpen(false)} className="py-1">
+                  </Link>
+                  <Link href="/#classement" onClick={() => setMenuOpen(false)} className="py-1">
                     À propos
-                  </a>
+                  </Link>
+                  <Link href="/#comparaison" onClick={() => setMenuOpen(false)} className="py-1">
+                    Comparaison
+                  </Link>
                 </nav>
 
                 {/* Barre de recherche mobile (en bas du panneau) */}

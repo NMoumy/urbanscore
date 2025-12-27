@@ -82,6 +82,8 @@ h1 {
 .btn-primary-small:hover {
   /* opacity: 0.70; */
   background-color: var(--accent-darker);
+  text-decoration: none;
+  color: var(--white);
 }
 
 /* Conteneur principal avec largeur max pour 18 pouces (2304px) */
