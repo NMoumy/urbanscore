@@ -106,7 +106,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
             <CaretLeftIcon size={24} weight="bold" className="text-foreground" />
           </Link>
           <div>
-            <h1 className="text-3xl md:text-4xl font-semibold text-black mb-2">{neighborhood.name}</h1>
+            <h1 className="text-black mb-2">{neighborhood.name}</h1>
             <p className="text-foreground">{neighborhood.description}</p>
           </div>
         </div>

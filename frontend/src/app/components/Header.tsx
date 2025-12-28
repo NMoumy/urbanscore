@@ -23,8 +23,8 @@ export const Header = () => {
           {/* Nav desktop */}
           <nav className="hidden md:flex gap-6 text-base">
             <Link href="/">Accueil</Link>
-            <Link href="/#classement">À propos</Link>
-            <Link href="/#comparaison">Comparaison</Link>
+            <Link href="/about">À propos</Link>
+            <Link href="/compare">Comparer</Link>
           </nav>
 
           {/* Barre de recherche desktop */}
