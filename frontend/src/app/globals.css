@@ -89,6 +89,11 @@ h3 {
   color: var(--white);
 }
 
+.logo-link {
+  /* @apply hover:decoration-none; */
+  @apply hover:no-underline;
+}
+
 /* Conteneur principal avec largeur max pour 18 pouces (2304px) */
 .container-main {
   /* @apply max-w-[2304px] mx-auto w-full; */

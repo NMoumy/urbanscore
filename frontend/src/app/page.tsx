@@ -1,4 +1,4 @@
-import RankingList from "./components/RankingList";
+import RankingList from "../components/RankingList";
 
 export default function Home() {
   return (

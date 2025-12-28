@@ -13,7 +13,7 @@ export const Header = () => {
       <div className="container-main relative flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-0">
         {/* Barre supérieure: logo + nav desktop + bouton burger */}
         <div className="w-full flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-1 logo-link">
             <MapPinIcon size={28} weight="fill" className="text-accent" aria-hidden="true" />
             <p className="text-black text-lg md:text-xl font-semibold">
               Urban<span className="text-accent">Score</span>

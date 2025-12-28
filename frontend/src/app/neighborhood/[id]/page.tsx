@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CaretLeftIcon } from "@phosphor-icons/react/dist/ssr";
-import NeighborhoodScores from "../../components/NeighborhoodScores";
-import NeighborhoodStatistics from "../../components/NeighborhoodStatistics";
-import NeighborhoodStrengths from "../../components/NeighborhoodStrengths";
+import NeighborhoodScores from "../../../components/NeighborhoodScores";
+import NeighborhoodStatistics from "../../../components/NeighborhoodStatistics";
+import NeighborhoodStrengths from "../../../components/NeighborhoodStrengths";
 
 // Données temporaires - à remplacer par appel API
 const neighborhoodsData = {
