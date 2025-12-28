@@ -10,7 +10,7 @@ const neighborhoodsData = {
   "1": {
     id: "1",
     name: "Rosemont",
-    description: "Découvrez les informations clés du quartier « Rosemont »",
+    description: "Découvrez les informations clés du quartier Rosemont",
     score: 82,
     security: 96,
     transport: 81,
@@ -20,7 +20,7 @@ const neighborhoodsData = {
     statistics: {
       medianIncome: "62 000 $",
       population: "142 000",
-      metroStations: 3,
+      subwayStations: 3,
     },
     strengths: ["Nombreux parcs et services", "Excellent accès au transport"],
     weaknesses: ["Loyers plus élevés"],
@@ -28,7 +28,7 @@ const neighborhoodsData = {
   "2": {
     id: "2",
     name: "Plateau-Mont-Royal",
-    description: "Découvrez les informations clés du quartier « Plateau-Mont-Royal »",
+    description: "Découvrez les informations clés du quartier Plateau-Mont-Royal",
     score: 82,
     security: 78,
     transport: 81,
@@ -38,7 +38,7 @@ const neighborhoodsData = {
     statistics: {
       medianIncome: "55 000 $",
       population: "108 000",
-      metroStations: 5,
+      subwayStations: 5,
     },
     strengths: ["Vie culturelle vibrante", "Nombreux restaurants et cafés"],
     weaknesses: ["Coût de logement élevé", "Stationnement difficile"],
@@ -46,7 +46,7 @@ const neighborhoodsData = {
   "3": {
     id: "3",
     name: "Villeray",
-    description: "Découvrez les informations clés du quartier « Villeray »",
+    description: "Découvrez les informations clés du quartier Villeray",
     score: 82,
     security: 88,
     transport: 84,
@@ -56,7 +56,7 @@ const neighborhoodsData = {
     statistics: {
       medianIncome: "58 000 $",
       population: "95 000",
-      metroStations: 4,
+      subwayStations: 4,
     },
     strengths: ["Bon équilibre qualité-prix", "Quartier familial"],
     weaknesses: ["Moins d'options de divertissement"],
@@ -64,7 +64,7 @@ const neighborhoodsData = {
   "4": {
     id: "4",
     name: "Outremont",
-    description: "Découvrez les informations clés du quartier « Outremont »",
+    description: "Découvrez les informations clés du quartier Outremont",
     score: 75,
     security: 85,
     transport: 80,
@@ -74,7 +74,7 @@ const neighborhoodsData = {
     statistics: {
       medianIncome: "75 000 $",
       population: "24 000",
-      metroStations: 2,
+      subwayStations: 2,
     },
     strengths: ["Quartier résidentiel calme", "Excellentes écoles"],
     weaknesses: ["Moins accessible en transport", "Prix élevés"],
@@ -94,7 +94,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
   }
 
   return (
-    <div className="px-4 md:px-6 bg-background min-h-screen">
+    <div className="px-4 md:px-6 bg-background">
       <div className="container-main py-6 md:py-10">
         {/* Bouton retour + Titre et Description alignés à gauche */}
         <div className="flex items-start gap-3 mb-8">

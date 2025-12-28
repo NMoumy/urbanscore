@@ -71,6 +71,9 @@ h1 {
   @apply text-2xl;
 }
 
+h3 {
+  @apply text-lg md:text-xl font-semibold;
+}
 /* Composants */
 .btn {
   @apply bg-white shadow-2xs;

@@ -10,8 +10,8 @@ type NeighborhoodStrengthsProps = {
 export default function NeighborhoodStrengths({ strengths, weaknesses }: NeighborhoodStrengthsProps) {
   return (
     <div className="bg-white border border-gray-light rounded-lg p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-black">Force & Faiblesse</h3>
+      <div className="flex items-center justify-between">
+        <h3 className="text-black">Force & Faiblesse</h3>
         <button
           className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
           aria-label="Informations supplémentaires"
@@ -19,7 +19,7 @@ export default function NeighborhoodStrengths({ strengths, weaknesses }: Neighbo
           <span className="text-xs text-gray-600">?</span>
         </button>
       </div>
-
+      <div className="line-horizontal"></div>
       <div className="space-y-4">
         {/* Forces */}
         {strengths.map((strength, index) => (

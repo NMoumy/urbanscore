@@ -38,7 +38,7 @@ export default function NeighborhoodCard({ neighborhood, index }: NeighborhoodCa
         >
           {index + 1}
         </div>
-        <h3 className="text-lg md:text-xl font-semibold ">{neighborhood.name}</h3>
+        <h3>{neighborhood.name}</h3>
         <StarRating score={neighborhood.score} />
         <p className="w-full md:hidden order-1 ml-0">Score global {neighborhood.score}</p>
         <Link
