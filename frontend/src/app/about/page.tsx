@@ -1,17 +1,14 @@
 import React from "react";
 import {
-  Target,
-  Laptop,
-  ChartBar,
-  Brain,
-  Car,
-  Train,
-  ChatsCircle,
-  TreeEvergreen,
-  CurrencyDollar,
-  DeviceMobile,
-  UserCircle,
-  Star,
+  TargetIcon,
+  LaptopIcon,
+  ChartBarIcon,
+  BrainIcon,
+  CarIcon,
+  TrainIcon,
+  ChatsCircleIcon,
+  TreeEvergreenIcon,
+  CurrencyDollarIcon
 } from "@phosphor-icons/react/dist/ssr";
 
 export default function About() {
@@ -33,7 +30,7 @@ export default function About() {
           {/* Section 1: Notre mission */}
           <div className="bg-white rounded-lg shadow-xs p-6 md:p-8 border border-gray-light">
             <div className="flex items-start gap-4 mb-4">
-              <Target size={40} weight="duotone" className="text-accent" />
+              <TargetIcon size={40} weight="duotone" className="text-accent" />
               <h2 className="text-lg md:text-xl font-semibold text-black">Notre mission</h2>
             </div>
             <p className="text-foreground leading-relaxed">
@@ -45,7 +42,7 @@ export default function About() {
           {/* Section 2: Qui a créé UrbanScore ? */}
           <div className="bg-white rounded-lg shadow-xs p-6 md:p-8 border border-gray-light">
             <div className="flex items-start gap-4 mb-4">
-              <Laptop size={40} weight="duotone" className="text-accent" />
+              <LaptopIcon size={40} weight="duotone" className="text-accent" />
               <h2 className="text-lg md:text-xl font-semibold text-black">Qui a créé UrbanScore ?</h2>
             </div>
             <p className="text-foreground leading-relaxed">
@@ -57,7 +54,7 @@ export default function About() {
           {/* Section 3: Quelles données sont utilisées ? */}
           <div className="bg-white rounded-lg shadow-xs p-6 md:p-8 border border-gray-light">
             <div className="flex items-start gap-4 mb-4">
-              <ChartBar size={40} weight="duotone" className="text-accent" />
+              <ChartBarIcon size={40} weight="duotone" className="text-accent" />
               <h2 className="text-lg md:text-xl font-semibold text-black">Quelles données sont utilisées ?</h2>
             </div>
             <p className="text-foreground mb-4">
@@ -65,35 +62,35 @@ export default function About() {
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Car size={28} weight="duotone" className="text-orange-500 flex-shrink-0" />
+                <CarIcon size={28} weight="duotone" className="text-orange-500 flex-shrink-0" />
                 <div>
                   <strong className="text-black">Sécurité :</strong>
                   <span className="text-foreground"> statistiques de criminalité.</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Train size={28} weight="duotone" className="text-accent flex-shrink-0" />
+                <TrainIcon size={28} weight="duotone" className="text-accent flex-shrink-0" />
                 <div>
                   <strong className="text-black">Transport :</strong>
                   <span className="text-foreground"> densité du métro, bus, accessibilité.</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <ChatsCircle size={28} weight="duotone" className="text-purple-500 flex-shrink-0" />
+                <ChatsCircleIcon size={28} weight="duotone" className="text-purple-500 flex-shrink-0" />
                 <div>
                   <strong className="text-black">Services :</strong>
                   <span className="text-foreground"> écoles, commerces, services essentiels</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <TreeEvergreen size={28} weight="duotone" className="text-green-600 flex-shrink-0" />
+                <TreeEvergreenIcon size={28} weight="duotone" className="text-green-600 flex-shrink-0" />
                 <div>
                   <strong className="text-black">Loisirs :</strong>
                   <span className="text-foreground"> parcs, installations sportives, culture</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <CurrencyDollar size={28} weight="duotone" className="text-yellow-600 flex-shrink-0" />
+                <CurrencyDollarIcon size={28} weight="duotone" className="text-yellow-600 flex-shrink-0" />
                 <div>
                   <strong className="text-black">Données socio-économiques :</strong>
                   <span className="text-foreground"> revenu médian, population</span>
@@ -105,7 +102,7 @@ export default function About() {
           {/* Section 4: Comment les scores sont-ils calculés ? */}
           <div className="bg-white rounded-lg shadow-xs p-6 md:p-8 border border-gray-light">
             <div className="flex items-start gap-4 mb-4">
-              <Brain size={40} weight="duotone" className="text-accent" />
+              <BrainIcon size={40} weight="duotone" className="text-accent" />
               <h2 className="text-lg md:text-xl font-semibold text-black">Comment les scores sont-ils calculés ?</h2>
             </div>
 
