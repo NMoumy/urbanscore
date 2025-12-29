@@ -62,35 +62,35 @@ export default function About() {
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <CarIcon size={28} weight="duotone" className="text-orange-500 flex-shrink-0" />
+                <CarIcon size={28} weight="duotone" className="text-orange-500 shrink-0" />
                 <div>
                   <strong className="text-black">Sécurité :</strong>
                   <span className="text-foreground"> statistiques de criminalité.</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <TrainIcon size={28} weight="duotone" className="text-accent flex-shrink-0" />
+                <TrainIcon size={28} weight="duotone" className="text-accent shrink-0" />
                 <div>
                   <strong className="text-black">Transport :</strong>
                   <span className="text-foreground"> densité du métro, bus, accessibilité.</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <ChatsCircleIcon size={28} weight="duotone" className="text-purple-500 flex-shrink-0" />
+                <ChatsCircleIcon size={28} weight="duotone" className="text-purple-500 shrink-0" />
                 <div>
                   <strong className="text-black">Services :</strong>
                   <span className="text-foreground"> écoles, commerces, services essentiels</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <TreeEvergreenIcon size={28} weight="duotone" className="text-green-600 flex-shrink-0" />
+                <TreeEvergreenIcon size={28} weight="duotone" className="text-green-600 shrink-0" />
                 <div>
                   <strong className="text-black">Loisirs :</strong>
                   <span className="text-foreground"> parcs, installations sportives, culture</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <CurrencyDollarIcon size={28} weight="duotone" className="text-yellow-600 flex-shrink-0" />
+                <CurrencyDollarIcon size={28} weight="duotone" className="text-yellow-600 shrink-0" />
                 <div>
                   <strong className="text-black">Données socio-économiques :</strong>
                   <span className="text-foreground"> revenu médian, population</span>
