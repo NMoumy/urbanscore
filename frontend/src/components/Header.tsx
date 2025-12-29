@@ -66,10 +66,10 @@ export const Header = () => {
                   <Link href="/" onClick={() => setMenuOpen(false)} className="py-1">
                     Accueil
                   </Link>
-                  <Link href="/#classement" onClick={() => setMenuOpen(false)} className="py-1">
+                  <Link href="/about" onClick={() => setMenuOpen(false)} className="py-1">
                     À propos
                   </Link>
-                  <Link href="/#comparaison" onClick={() => setMenuOpen(false)} className="py-1">
+                  <Link href="/compare" onClick={() => setMenuOpen(false)} className="py-1">
                     Comparaison
                   </Link>
                 </nav>
