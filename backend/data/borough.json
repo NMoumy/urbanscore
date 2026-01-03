@@ -1,0 +1,344 @@
+[
+  {
+    "name": "Ahuntsic-Cartierville",
+    "statistics": {
+      "area_km2": 24.0,
+      "population": 135336,
+      "density_per_km2": 5639,
+      "median_property_value": 424720,
+      "median_household_income": null
+    },
+    "attractions": {
+      "green_spaces": 118,
+      "parks": 77,
+      "libraries": 3,
+      "pools": 6,
+      "metro_stations": 3,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Anjou",
+    "statistics": {
+      "area_km2": 13.7,
+      "population": 44800,
+      "density_per_km2": 3270,
+      "median_property_value": 426100,
+      "median_household_income": 53873
+    },
+    "attractions": {
+      "green_spaces": 18,
+      "parks": 18,
+      "libraries": 2,
+      "pools": 5,
+      "metro_stations": 0,
+      "sports_complexes": null
+    }
+  },
+  {
+    "name": "Côte-des-Neiges–Notre-Dame-de-Grâce",
+    "statistics": {
+      "area_km2": 21.4,
+      "population": 185463,
+      "density_per_km2": null,
+      "median_property_value": 548055,
+      "median_household_income": null
+    },
+    "attractions": {
+      "green_spaces": 47,
+      "parks": 55,
+      "libraries": 4,
+      "pools": 6,
+      "metro_stations": 10,
+      "sports_complexes": null
+    }
+  },
+  {
+    "name": "Lachine",
+    "statistics": {
+      "area_km2": 24.5,
+      "population": 50172,
+      "density_per_km2": 2834,
+      "median_property_value": 566782,
+      "median_household_income": 40620
+    },
+    "attractions": {
+      "green_spaces": 60,
+      "parks": 49,
+      "libraries": 2,
+      "pools": 5,
+      "metro_stations": 0,
+      "sports_complexes": null
+    }
+  },
+  {
+    "name": "Le Plateau-Mont-Royal",
+    "statistics": {
+      "area_km2": 8.1,
+      "population": 104000,
+      "density_per_km2": 12840,
+      "median_property_value": 737200,
+      "median_household_income": 47816
+    },
+    "attractions": {
+      "green_spaces": 37,
+      "parks": 46,
+      "libraries": 2,
+      "pools": 6,
+      "metro_stations": 1,
+      "sports_complexes": null
+    }
+  },
+  {
+    "name": "Sud-Ouest",
+    "statistics": {
+      "area_km2": 15.2,
+      "population": 77000,
+      "density_per_km2": 5066,
+      "median_property_value": 410000,
+      "median_household_income": 55000
+    },
+    "attractions": {
+      "green_spaces": 60,
+      "parks": 30,
+      "libraries": 4,
+      "pools": 3,
+      "metro_stations": 7,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Mercier–Hochelaga-Maisonneuve",
+    "statistics": {
+      "area_km2": 17.5,
+      "population": 138510,
+      "density_per_km2": 7915,
+      "median_property_value": 361200,
+      "median_household_income": 44500
+    },
+    "attractions": {
+      "green_spaces": 75,
+      "parks": 37,
+      "libraries": 2,
+      "pools": 4,
+      "metro_stations": 5,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Montréal-Nord",
+    "statistics": {
+      "area_km2": 23.3,
+      "population": 83263,
+      "density_per_km2": 3574,
+      "median_property_value": 280000,
+      "median_household_income": 38250
+    },
+    "attractions": {
+      "green_spaces": 55,
+      "parks": 28,
+      "libraries": 2,
+      "pools": 2,
+      "metro_stations": 2,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Outremont",
+    "statistics": {
+      "area_km2": 5.1,
+      "population": 24729,
+      "density_per_km2": 4850,
+      "median_property_value": 825000,
+      "median_household_income": 71300
+    },
+    "attractions": {
+      "green_spaces": 30,
+      "parks": 12,
+      "libraries": 1,
+      "pools": 1,
+      "metro_stations": 2,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Pierrefonds-Roxboro",
+    "statistics": {
+      "area_km2": 31.1,
+      "population": 68207,
+      "density_per_km2": 2192,
+      "median_property_value": 390000,
+      "median_household_income": 61000
+    },
+    "attractions": {
+      "green_spaces": 85,
+      "parks": 42,
+      "libraries": 2,
+      "pools": 3,
+      "metro_stations": 0,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Rivière-des-Prairies–Pointe-aux-Trembles",
+    "statistics": {
+      "area_km2": 131.0,
+      "population": 104000,
+      "density_per_km2": 794,
+      "median_property_value": 300000,
+      "median_household_income": 46000
+    },
+    "attractions": {
+      "green_spaces": 200,
+      "parks": 95,
+      "libraries": 3,
+      "pools": 5,
+      "metro_stations": 0,
+      "sports_complexes": 2
+    }
+  },
+  {
+    "name": "Rosemont–La Petite-Patrie",
+    "statistics": {
+      "area_km2": 15.1,
+      "population": 139726,
+      "density_per_km2": 9250,
+      "median_property_value": 550000,
+      "median_household_income": 49000
+    },
+    "attractions": {
+      "green_spaces": 92,
+      "parks": 46,
+      "libraries": 3,
+      "pools": 4,
+      "metro_stations": 6,
+      "sports_complexes": 2
+    }
+  },
+  {
+    "name": "Saint-Laurent",
+    "statistics": {
+      "area_km2": 43.5,
+      "population": 101160,
+      "density_per_km2": 2325,
+      "median_property_value": 420000,
+      "median_household_income": 59700
+    },
+    "attractions": {
+      "green_spaces": 95,
+      "parks": 45,
+      "libraries": 3,
+      "pools": 4,
+      "metro_stations": 2,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Saint-Léonard",
+    "statistics": {
+      "area_km2": 13.3,
+      "population": 75613,
+      "density_per_km2": 5682,
+      "median_property_value": 410000,
+      "median_household_income": 48000
+    },
+    "attractions": {
+      "green_spaces": 40,
+      "parks": 20,
+      "libraries": 2,
+      "pools": 2,
+      "metro_stations": 1,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Verdun",
+    "statistics": {
+      "area_km2": 11.5,
+      "population": 66418,
+      "density_per_km2": 5771,
+      "median_property_value": 500000,
+      "median_household_income": 49000
+    },
+    "attractions": {
+      "green_spaces": 55,
+      "parks": 25,
+      "libraries": 2,
+      "pools": 3,
+      "metro_stations": 3,
+      "sports_complexes": 1
+    }
+  },
+  {
+    "name": "Ville-Marie",
+    "statistics": {
+      "area_km2": 16.0,
+      "population": 95050,
+      "density_per_km2": 5934,
+      "median_property_value": 845000,
+      "median_household_income": 56000
+    },
+    "attractions": {
+      "green_spaces": 50,
+      "parks": 25,
+      "libraries": 5,
+      "pools": 3,
+      "metro_stations": 12,
+      "sports_complexes": 2
+    }
+  },
+  {
+    "name": "Villeray–Saint-Michel–Parc-Extension",
+    "statistics": {
+      "area_km2": 16.7,
+      "population": 142000,
+      "density_per_km2": 8500,
+      "median_property_value": 420000,
+      "median_household_income": 45000
+    },
+    "attractions": {
+      "green_spaces": 88,
+      "parks": 42,
+      "libraries": 3,
+      "pools": 4,
+      "metro_stations": 7,
+      "sports_complexes": 2
+    }
+  },
+  {
+    "name": "L’Île-Bizard–Sainte-Geneviève",
+    "statistics": {
+      "area_km2": 22.8,
+      "population": 13834,
+      "density_per_km2": 607,
+      "median_property_value": 520000,
+      "median_household_income": 95000
+    },
+    "attractions": {
+      "green_spaces": 40,
+      "parks": 20,
+      "libraries": 1,
+      "pools": 1,
+      "metro_stations": 0,
+      "sports_complexes": 1
+    }
+  },
+{
+    "name": "LaSalle",
+    "statistics": {
+      "area_km2": 16.3,
+      "population": 90975,
+      "density_per_km2": 4724,
+      "median_property_value": 600000,
+      "median_household_income": 516300
+    },
+    "attractions": {
+      "green_spaces": 44,
+      "parks": 44,
+      "libraries": 1,
+      "pools": 7,
+      "metro_stations": 2,
+      "sports_complexes": 1
+    }
+}
+]

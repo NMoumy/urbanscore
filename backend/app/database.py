@@ -7,14 +7,14 @@ try:
     # Vérifier la connexion
     client.admin.command('ping')
     db = client[settings.database_name]
-    neighborhoods_collection = db["neighborhoods"]
-    print("✅ Connexion MongoDB établie")
+    boroughs_collection = db["boroughs"]
+    print("Connexion MongoDB établie")
 except ServerSelectionTimeoutError:
-    print("❌ Erreur : MongoDB n'est pas accessible à", settings.mongo_uri)
-    print("   Assurez-vous que MongoDB est en cours d'exécution")
+    print(f"Erreur : MongoDB n'est pas accessible")
+    print("Assurez-vous que MongoDB est en cours d'exécution")
     db = None
-    neighborhoods_collection = None
+    boroughs_collection = None
 except Exception as e:
-    print(f"❌ Erreur de connexion: {e}")
+    print(f"Erreur de connexion: {e}")
     db = None
-    neighborhoods_collection = None
+    boroughs_collection = None

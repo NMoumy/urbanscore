@@ -1,5 +1,5 @@
 from typing import List
-from app.models.neighborhood import ScoreCategory
+from backend.app.models.borough import ScoreCategory
 
 def calculate_global_score(scores: List[ScoreCategory]) -> float:
     """
