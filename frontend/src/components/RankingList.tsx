@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import NeighborhoodCard from "./NeighborhoodCard";
 import RankingFilters from "./RankingFilters";
+import apiService, { Borough, Profile } from "@/services/api";
 
-type Neighborhood = {
+type NeighborhoodDisplay = {
   id: string;
   name: string;
   score: number;
@@ -15,28 +16,63 @@ type Neighborhood = {
   leisure: number;
 };
 
-const data: Neighborhood[] = [
-  { id: "1", name: "Rosemont", score: 82, security: 96, transport: 81, service: 78, cost: 82, leisure: 83 },
-  { id: "2", name: "Plateau-Mont-Royal", score: 82, security: 78, transport: 81, service: 85, cost: 50, leisure: 75 },
-  { id: "3", name: "Villeray", score: 82, security: 88, transport: 84, service: 82, cost: 75, leisure: 80 },
-  { id: "4", name: "Outremont", score: 75, security: 85, transport: 80, service: 78, cost: 65, leisure: 70 },
-];
+const profileMap: { [key: string]: Profile } = {
+  all: "general",
+  Famille: "famille",
+  Étudiants: "etudiant",
+  "Personne âgée": "personne_agee",
+  "Petit budget": "petit_budget",
+};
 
 export default function RankingList() {
   const [sortBy, setSortBy] = useState<"best" | "worst">("best");
   const [filterProfile, setFilterProfile] = useState<string>("all");
-
-  const sortedData = useMemo(() => {
-    const filtered = filterProfile === "all" ? data : data.filter((n) => n.name === filterProfile);
-    const sorted = [...filtered].sort((a, b) => {
-      if (sortBy === "best") return b.score - a.score;
-      if (sortBy === "worst") return a.score - b.score;
-      return 0;
-    });
-    return sorted;
-  }, [sortBy, filterProfile]);
+  const [neighborhoods, setNeighborhoods] = useState<NeighborhoodDisplay[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const profiles = ["Famille", "Étudiants", "Personne âgée", "Petit budget"];
+
+  // Récupérer les données du backend
+  useEffect(() => {
+    const fetchRankings = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const apiProfile = profileMap[filterProfile] || "general";
+        const order = sortBy === "best" ? "desc" : "asc";
+
+        const data = await apiService.getRankings({
+          profile: apiProfile,
+          sort_by: "global_score",
+          order,
+          limit: 20,
+        });
+
+        // Transformer les données du backend pour le frontend
+        const transformed = data.map((borough: Borough, index: number) => ({
+          id: `${index}`,
+          name: borough.name,
+          score: borough.scores?.global_score ?? 0,
+          security: borough.scores?.security ?? 0,
+          transport: borough.scores?.transport ?? 0,
+          service: borough.scores?.services ?? 0,
+          cost: borough.scores?.budget ?? 0,
+          leisure: borough.scores?.leisure ?? 0,
+        }));
+
+        setNeighborhoods(transformed);
+      } catch (err) {
+        console.error("Erreur lors du chargement des classements:", err);
+        setError("Impossible de charger les classements. Vérifiez que le backend est lancé.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRankings();
+  }, [filterProfile, sortBy]);
 
   return (
     <div className="w-full pb-8">
@@ -48,12 +84,35 @@ export default function RankingList() {
         categories={profiles}
       />
 
+      {/* Message de chargement */}
+      {loading && (
+        <div className="text-center py-8">
+          <p className="text-foreground">Chargement des classements...</p>
+        </div>
+      )}
+
+      {/* Message d'erreur */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+          <p className="text-red-600">{error}</p>
+        </div>
+      )}
+
       {/* Liste */}
-      <div className="space-y-4">
-        {sortedData.map((neighborhood, index) => (
-          <NeighborhoodCard key={neighborhood.id} neighborhood={neighborhood} index={index} />
-        ))}
-      </div>
+      {!loading && neighborhoods.length > 0 && (
+        <div className="space-y-4">
+          {neighborhoods.map((neighborhood, index) => (
+            <NeighborhoodCard key={neighborhood.id} neighborhood={neighborhood} index={index} />
+          ))}
+        </div>
+      )}
+
+      {/* Pas de résultats */}
+      {!loading && neighborhoods.length === 0 && !error && (
+        <div className="text-center py-8">
+          <p className="text-foreground">Aucun résultat trouvé</p>
+        </div>
+      )}
     </div>
   );
 }
